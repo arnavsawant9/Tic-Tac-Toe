@@ -1,113 +1,74 @@
-* {
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f4f4f9;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
 h1 {
-  color: #583101;
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 10.5vmin
+  margin-bottom: 10px;
 }
 
-body {
-  background-color: #ccd5ae;
-  text-align: center;
+.mode-select {
+  margin: 10px;
 }
 
-.container {
-  height: 70vh;
-  //display:flex;
-  display: flex;
-  //flex-wrap:wrap;
+.mode-select button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#difficulty-container {
+  margin: 10px;
+}
+
+#difficulty {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
   justify-content: center;
-  align-items: center;
-}
-
-.game {
-  height: 60vmin;
-  width: 60vmin;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1vmin;
+  margin: 20px auto;
 }
 
 .box {
-  height: 18vmin;
-  width: 18vmin;
-  gap: 5px;
-  border-radius: 5px;
-  background-color: #d4a373;
-  //border:none;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  font-size: 50px;
-  color: #463f3a;
+  font-size: 2rem;
+  font-weight: bold;
+  background: white;
+  border: 2px solid #333;
+  cursor: pointer;
 }
 
-.reset-btn {
-  height: 30px;
-  width: 18vmin;
-  background-color: #faedcd;
-  border: none;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  color: #03045e;
-  border-radius: 5px;
-  /* padding: 5px; */
-}
-
-#new-btn {
-  height: 30px;
-  width: 18vmin;
-  background-color: #faedcd;
-  border: none;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  color: #03045e;
-  border-radius: 5px;
-}
-
-#msg {
-  font-size: 9vmin;
-  color: #283618;
+.box:disabled {
+  cursor: not-allowed;
+  background: #eaeaea;
 }
 
 .msg-container {
-  height: 100vh;
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 15vmin;
-  justify-content:center;
-  align-items:center;
-  display:flex; /*this would help the congratulations and New Game button to be exactly in the center */
-  flex-direction:column;
-  gap: 3rem;
+  margin: 20px;
+}
+
+.reset-btn, #new-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #333;
+  color: white;
 }
 
 .hide {
   display: none;
-}
-
-#last-text{
-  font-size: 10vmin;
-}
-
-
-.github-icon{
-  height:50px;
-  width:50px;
-}
-
-.footer{
-  background-color:#fff
-  height:30px;
-}
-
-.footer-icon{
-  margin-top:20px;
-  margin-bottom:20px;
-  height:35px;
-  width:35px;
 }
