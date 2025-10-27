@@ -1,50 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tic Tac Toe</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tic Tac Toe — Modern UI</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Tic Tac Toe</h1>
+  <main class="app" role="application" aria-label="Tic Tac Toe">
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">TT</div>
+        <div>
+          <h1 class="app-title">Tic Tac Toe</h1>
+          <p class="lead">Play vs human or AI — pleasant UX, keyboard support, and responsive layout</p>
+        </div>
+      </div>
 
-  <h2>Select Mode</h2>
-  <div class="mode-select">
-    <button id="pvp-btn">Player vs Player</button>
-    <button id="ai-btn">Player vs AI</button>
-  </div>
+      <div class="mode-controls">
+        <div class="mode-buttons" role="tablist" aria-label="Game mode">
+          <button id="pvp-btn" class="mode-btn" aria-pressed="true">2 Players</button>
+          <button id="ai-btn" class="mode-btn">Play vs AI</button>
+        </div>
+        <div id="difficulty-container" class="difficulty hide" aria-hidden="true">
+          <label for="difficulty" class="muted">Difficulty</label>
+          <select id="difficulty" aria-label="AI difficulty">
+            <option value="easy">Easy</option>
+            <option value="hard" selected>Hard</option>
+          </select>
+        </div>
+      </div>
+    </header>
 
-  <!-- Difficulty selector (AI only) -->
-  <div id="difficulty-container" class="hide">
-    <h3>Select Difficulty</h3>
-    <select id="difficulty">
-      <option value="easy">Easy</option>
-      <option value="hard" selected>Hard</option>
-    </select>
-  </div>
+    <section class="main-grid">
+      <section class="board-panel">
+        <div class="status-row">
+          <div class="turn">Turn: <span id="turn">O</span></div>
+          <div class="controls">
+            <button id="new-btn" class="btn primary">New Game</button>
+            <button class="reset-btn btn">Reset</button>
+          </div>
+        </div>
 
-  <div class="game">
-    <div class="board">
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-    </div>
-  </div>
+        <div class="board" role="grid" aria-label="Tic tac toe board">
+          <button class="box" aria-label="Cell 1" data-index="0"></button>
+          <button class="box" aria-label="Cell 2" data-index="1"></button>
+          <button class="box" aria-label="Cell 3" data-index="2"></button>
+          <button class="box" aria-label="Cell 4" data-index="3"></button>
+          <button class="box" aria-label="Cell 5" data-index="4"></button>
+          <button class="box" aria-label="Cell 6" data-index="5"></button>
+          <button class="box" aria-label="Cell 7" data-index="6"></button>
+          <button class="box" aria-label="Cell 8" data-index="7"></button>
+          <button class="box" aria-label="Cell 9" data-index="8"></button>
+        </div>
 
-  <div class="msg-container hide">
-    <p id="msg"></p>
-    <button id="new-btn">New Game</button>
-  </div>
+        <div class="msg-container hide" aria-live="polite">
+          <p id="msg" class="msg-text"></p>
+        </div>
+      </section>
 
-  <button class="reset-btn">Reset</button>
+      <aside class="side-panel" aria-labelledby="game-info">
+        <h2 id="game-info">Game Info</h2>
+        <div class="scoreboard">
+          <div class="score"><strong>X</strong><span id="scoreX">0</span></div>
+          <div class="score"><strong>Tie</strong><span id="scoreTie">0</span></div>
+          <div class="score"><strong>O</strong><span id="scoreO">0</span></div>
+        </div>
 
-  <script src="app.js"></script>
+        <div class="tips">
+          <h3>Tips</h3>
+          <ul>
+            <li>Use 1–9 keys to play cells (1 = top-left, 9 = bottom-right)</li>
+            <li>Press R to restart, U to undo (if implemented)</li>
+          </ul>
+        </div>
+
+        <div class="share">
+          <button id="copyLink" class="btn">Share</button>
+          <button id="aboutBtn" class="btn">About</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
